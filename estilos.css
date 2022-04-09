@@ -4,37 +4,30 @@ body{
     width: 100%;
     background-color: lightyellow;
     display: flex;
-    justify-content: center;
+    justify-content: center;  
     
 }
 
 .title{
-position: absolute;
-
-top: 40px;
-margin-left: 122px;
-
-font-family: 'Roboto';
-font-weight: 700;
-font-size: 56px;
-line-height: 66px;
-letter-spacing: -0.004em;
-
-color: #75B79E;
+    position: absolute;
+    top: 40px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
 
 }
 
 .cards{
     display: flex;
-    flex-direction: column;
-      
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 150px;
+    justify-content:center;  
 }
 
-.first-line{
-    display: flex;
-    margin-top: 150px;
-    margin-left: 122px;
-}
 
 .second-line{
     display: flex;
@@ -43,21 +36,48 @@ color: #75B79E;
     
 }
 
-.one{
-    margin-right: 34px;
+.card{
+    position: relative;
     width: 117px;
     height: 146px;
+}
+
+.face{
+    
+    position: absolute;
+    margin-right: 34px;
+    margin-bottom: 34px;
+    width: 100%;
+    height: 100%;
     background-color: #A7E9AF;
     display: flex;
     align-items: center;
     border-radius: 5px;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+
 }
+
+.backFace{
+    transform: rotateY(180deg);
+}
+
+.frontFlip{
+    transform: rotateY(-180deg);
+}
+
+.backFlip{
+    transform: rotateY(0deg);
+}
+
 
 
 
 img{
     width: 100px;
     height: 100px;
-    margin-left: 10px;    
-    
+    margin-left: 10px;        
 }
+
+
