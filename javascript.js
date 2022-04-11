@@ -23,17 +23,28 @@ gifsEscolhidos = gifsEscolhidos.concat(gifsEscolhidos)
 
 gifsEscolhidos = gifsEscolhidos.sort(comparador)
 
-for (let index = 0; index < qtdCartas; index++) {
+for (let index = 0; index < qtdCartas; index += 2) {
     cartas.innerHTML += `        
-    <div class="card" onclick="flipCard(this)">
-        <div class="face"> 
-         <img src="/imagens/front.png"> 
-        </div>
+        <div class="par">
+            <div class="card" onclick="flipCard(this)">
+                <div class="face"> 
+                    <img src="/imagens/front.png"> 
+                </div>
 
-    <div class="backFace face">
-        <img src="./imagens/${gifsEscolhidos[index]}">
-    </div>
-    </div>`
+                <div class="backFace face">
+                    <img src="./imagens/${gifsEscolhidos[index]}">
+                </div>
+            </div>
+            <div class="card" onclick="flipCard(this)">
+                <div class="face"> 
+                    <img src="/imagens/front.png"> 
+                </div>
+
+                <div class="backFace face">
+                    <img src="./imagens/${gifsEscolhidos[index + 1]}">
+                </div>
+            </div>
+        </div>`
 }
 
 
@@ -96,4 +107,6 @@ function verificaFimJogo(){
 
     }
 }
+
+
 
